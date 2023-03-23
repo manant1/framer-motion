@@ -15,7 +15,7 @@ export default function Header({open, setOpen}: {open: boolean, setOpen: any}) {
             {open && (
                 <button onClick={() => setOpen(false)} className="relative h-12 w-12 rounded-full bg-opacity-50 bg-black text-white">x</button>
             )}
-            <motion.div className="flex flex-row gap-3 px-4 py-3 rounded-xl" initial={null} animate={open ? 'open' : 'close'} variants={variants}>
+            <motion.div className="flex flex-row gap-3 px-4 py-3 rounded-xl" initial={false} animate={open ? 'open' : 'close'} variants={variants}>
                 <svg width="100" height="22" viewBox="0 0 100 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20.8999 3.14258C20.8999 9.65389 20.8999 17.7569 16.1078 17.7569C12.2056 17.7569 10.3713 14.064 10.3713 9.74258C10.3713 6.59972 11.3142 5.60241 12.5993 5.60241" stroke="white" stroke-width="2.2"/>
                     <path d="M4.24268 3.14258C4.24268 9.65389 4.24268 17.7569 9.03479 17.7569C12.9369 17.7569 14.7712 14.064 14.7712 9.74258C14.7712 6.59972 13.8284 5.60241 12.5433 5.60241" stroke="white" stroke-width="2.2"/>

@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 declare var document: any;
 
 const variants = {
-    open: (y) => ({
+    open: (y: number) => ({
         width: '100%',
         transform: `translateY(-${y}px)`,
     }),
@@ -37,15 +37,15 @@ export default function Hero({open, setOpen}: {open: boolean, setOpen: any}) {
             <h1 className="text-center">We Are Sharing</h1>
             <p className="text-center">Expand your simulation skills with detailed tutorials,<br/>research and the
                 latest on We Are.</p>
-            <motion.div animate={open ? 'open' : 'close'} variants={variants} initial={null}
+            <motion.div animate={open ? 'open' : 'close'} variants={variants} initial={false}
                         custom={heroImageRef.current?.getBoundingClientRect().y}
                         className="w-[90%] w-full overflow-hidden h-full object-cover cursor-pointer">
-                <motion.div animate={open ? 'openImage' : 'closeImage'} variants={variants} initial={null}>
-                    <Image ref={heroImageRef} onClick={() => setOpen(!open)} src="/hero.png" width={1512} height={758}
+                <motion.div animate={open ? 'openImage' : 'closeImage'} variants={variants} initial={false}>
+                    <Image ref={heroImageRef} onClick={() => setOpen(!open)} src="/hero.png" width={1512} height={758} alt=""
                            className="object-cover h-full w-full rounded-3xl"/>
                 </motion.div>
                 <div className="flex flex-col items-center">
-                    <motion.div animate={open ? 'openContent' : 'closeContent'} variants={variants} initial={null}>
+                    <motion.div animate={open ? 'openContent' : 'closeContent'} variants={variants} initial={false}>
                         <h2 className={`${open ? 'text-white' : 'text-black'}`}>What Are Soft Skills?</h2>
                     </motion.div>
                 </div>
